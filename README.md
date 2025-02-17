@@ -25,18 +25,18 @@ This project demonstrates how to set up a web server on a Raspberry Pi 4B for ho
 
 ### 2. Install Web Server and Database
 ```
-sudo apt install nginx -y
-sudo apt install mariadb-server -y
-sudo apt install php-fpm php-mysql -y
+$ sudo apt install nginx -y
+$ sudo apt install mariadb-server -y
+$ sudo apt install php-fpm php-mysql -y
 ```
  
 ### 3. Download and Set Up WordPress
 ```
-cd /var/www/
-sudo wget https://wordpress.org/latest.tar.gz
-sudo tar -xvzf latest.tar.gz
-sudo rm latest.tar.gz
-sudo chown -R root:root wordpress/
+$ cd /var/www/
+$ sudo wget https://wordpress.org/latest.tar.gz
+$ sudo tar -xvzf latest.tar.gz
+$ sudo rm latest.tar.gz
+$ sudo chown -R root:root wordpress/
 ```
 ### 4. Configure Nginx
 Edit the Nginx configuration:
@@ -60,12 +60,12 @@ server {
 ```
 ### 5. Create a Database for WordPress
 ```   
-sudo mysql
-create database wordpress default character set utf8 collate utf8_unicode_ci;
-create user 'username'@'localhost' identified by 'password';
-grant all privileges on wordpress.* TO 'username'@'localhost';
-flush privileges;
-exit
+$ sudo mysql
+$ create database wordpress default character set utf8 collate utf8_unicode_ci;
+$ create user 'username'@'localhost' identified by 'password';
+$ grant all privileges on wordpress.* TO 'username'@'localhost';
+$ flush privileges;
+$ exit
 ```
 ### 6. Finalize WordPress Installation
 - Access the Raspberry Pi’s IP address in a web browser.
